@@ -18,7 +18,7 @@ Spring BOOT是一個基於Spring架構的微服務，旨在自動添加各種Spr
 * 不需使用XML
 * Spring Boot CLI，可直接使用*.groovy來run
 * 可使用Actuator來監控程式的狀態
-
+* LiveReload，存檔即重啟Server並刷新Browser
 ## __建置新專案相當容易__
 在STS中，選擇New -> Spring Starter Project可進入Spring Boot新專案生成精靈，只要依循精靈指示填入所需依賴即可生成新的Spring Boot專案。
 
@@ -163,5 +163,26 @@ http://localhost:9001/health
 
 
 搭配Spring Boot Admin，我們可以得到內部配置的可視化圖形。
+
+
+## __LiveReload__
+解決每次更改檔案都要重新啟動Server的問題，大幅提升工作效率
+
+使用方法:引入Spring Boot DevTools
+
+Maven中加入:
+```
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-devtools</artifactId>
+    </dependency>
+```
+
+Gradle中加入:
+```
+compile("org.springframework.boot:spring-boot-devtools")
+```
+
+重啟後即完成!
 
 ### 因此，我建議使用Spring Boot集成Spring MVC及其他框架。
